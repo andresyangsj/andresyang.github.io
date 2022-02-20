@@ -1,3 +1,47 @@
 body {
     background-color:mintcream
 }
+
+#card::first-letter {
+    float: left;
+    line-height: 35px;
+    font-size: 55px;
+    font-family: Montserrat;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: 5px;
+    margin-bottom: -5px;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10px;
+}
+
+#cards {
+    margin-top:40px;
+}
+
+#card {
+    font-size: 14px;
+}
+
+footer { 
+    margin-top:40px;
+}
+
+@media only screen and (max-width:400px) {
+    footer {
+        position: unset;
+        display: none;
+    }
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
