@@ -51,7 +51,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="about.html">About&APIs</a></li>
+                  <li class="nav-item"><a class="nav-link" href="about.html">Gallery</a></li>
                   <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
               </ul>
           </div>
@@ -81,13 +81,8 @@
     <div class="container-fluid" id="wrapper">
       <button type="button" class="btn btn-dark " onclick="changeTitle()">Display Current Time</button>
       <button type="button" class="btn btn-dark " onclick="hideFunction()">Hide Paragraph</button>
-      <button type="button" class="btn btn-dark " onclick="howdy('Friend')">Greeting!</button>
-      <button type="button" class="btn btn-dark " onclick="evalNumber()">evalNumber</button>
-      <div>
-        <button type="button" id="button_03" class="btn btn-dark" onclick="parseArray()">parseArray()</button>
-        <p id="inputArray"></p>
-        <p id="outputArray"></p>
-      </div>
+      <button type="button" class="btn btn-dark " onclick="howdy('Friend, Welcome to My Studio Website')">Greeting!</button>
+
     </div>
     <script type="text/javascript">
       function parseArray() {
@@ -98,49 +93,10 @@
         });
         document.getElementById('outputArray').innerText = `You entered ${inputArray.join(', ')}.
            I sorted them ${inputArray.sort().join(', ')}`;
-       }; 
-      
+       };   
     </script>
-    <div class="container-md" id="cards">
-      <div class="row">
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Session</h5>
-              <p id="card" class="card-text">Your Photo session will be a fun, memorable experience - one that you'll look back on and smile, otherwise it's just not worth documenting. We have more than one set of hands on-deck, which helps to guarantee the kids have fun and the adults can relax.  While a good time is priority, customizing your session is key.  
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Design</h5>
-              <p id="card" class="card-text">We have a reason for you to go beyond your cell phone photos and to work with our full service photography studio. We provide the space and experience to work with creative minds who will assist in the selection of photographs and then guide you on how to transform them into art pieces for your home, office or gifts.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Print</h5>
-              <p id="card" class="card-text">With all of the digital imagery at your fingertips, we work hard to make sure the beauty and importance of the tactile image is not forgotten. We’re here to take an image off of the computer and get it onto your walls and bookshelves. That way, your family can cherish a printed picture now and for years to come. 
-              </p>
-             </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3 mb-md-0">
-          <div class="card">
-            <div class="card-body">
-            <h5 class="card-title">Offerings</h5>
-              <p id="card" class="card-text">whether you need a large space with plenty of natural light for a photoshoot, or are looking for a sophisticated backdrop for your next event, we’ve got you covered.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
         
     
   

@@ -18,7 +18,7 @@
       crossorigin=""></script>
   
   </head>
-  <body onload="loadXML()">
+  <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -39,128 +39,39 @@
           <p class="text-white-50 mb-0">Book Your Experience now</p>
       </div>
     </header>
-    <section class="py-5">
-      <div class="container my-5">
+    <section class="py-1">
+      <div class="container my-3">
           <div class="row justify-content-center">
               <div id="paragraph" class="col-lg-6">
-                  <h2>About Photographer</h2>
-                  <p class="lead">My Name is Andres Yang, I stared doing professional photograpgy since 2018</p>
-                  <p class="mb-0">Please check back later for more fun facts about me</p>
+                  <h2>Highlights</h2>
+                  <p class="lead">Architecture photograph is one of my specialties, my unique perceptive makes building lively</p>
+                  <p class="mb-0">Please contact me for Inquires</p>
               </div>
           </div>
       </div>
     </section>
 
-    <div class="container mt-3">
-      <h1>Studio Address</h1>
-      <div id="map"></div>
-    </div>
-    <script type="text/javascript">
-      var latLng = [41.793849, -87.585555];
-      var map = L.map('map').setView(latLng, 16);
-      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiYW5kcmVzeWFuZyIsImEiOiJja3p1bGVtOXg3bnJ4MnduazQ4cGgweGNiIn0.niDEYwNeyxjeKJ5in4F8Dg'
-      }).addTo(map);
-      L.marker(latLng).addTo(map)
-      .bindPopup("<b>Andres<br>Studio</b>").openPopup();
-
-    </script>
-
-    <div class="container mt-3">
-      <div>Wiki API</div>
-      <form>
-        <div class="row">
-          <div class="col">
-            <input id="searchterm" type="text" class="form-control" placeholder="What do you what to know?">
-          </div>
+    <div class="container-md" id="cards">
+      <div class="row">
+        <div class="col-md-3 mb-3 mb-md-0">
+          <img src=web-1.jpg class="image">
         </div>
-      </form>
 
-      <button type="submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
-      <div class="container" id="wiki"></div>
+        <div class="col-md-3 mb-3 mb-md-0">
+          <img src=web-2.jpg class="image">
+        </div>
+        
+        <div class="col-md-3 mb-3 mb-md-0">
+          <img src=web-3.jpg class="image">
+        </div>
+
+        <div class="col-md-3 mb-3 mb-md-0">
+          <img src=web-4.jpg class="image">
+        </div>
+      </div>
     </div>
-    <script type="text/javascript">
-      function wikiAPI(){
-        var searchterm = document.getElementById('searchterm').value;
-        var connect = new XMLHttpRequest(); 
-        var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchterm;
-        connect.open('GET', url);
-        connect.onload = function () {
-          var wikiObject = JSON.parse(this.response);
-          var pages = wikiObject.query.pages;
-          for (var i in pages){
-            var newDiv = document.createElement("div");
-            newDiv.setAttribute('class', 'row h4');
-            document.getElementById("wiki").appendChild(newDiv);
-            newDiv.innerText = pages[i].title;
-          };
-        }
-        connect.send()
-      }
-    </script>
 
-    <script type="text/javascript">
-      var parentElement = document.getElementById('ochreTableBody');
-      var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
-      function loadXML(){
-        XMLrequest(url);
-      };
 
-      function XMLrequest(link){
-        var connect = new XMLHttpRequest();
-        connect.onreadystatechange = function (){
-          if (this.readyState == 4 && this.status == 200) {
-            listTexts(this.responseXML);
-          };
-        };
-        connect.open('GET', link, true);
-        connect.send();
-      }
-
-      function listTexts(sourceXML){
-        var textList = sourceXML.getElementsByTagName('text');
-        for (i=0; i < textList.length; i++) {
-          var tr = document.createElement('tr');
-          tr.setAttribute('class', 'ochreTableRows')
-          tr.setAttribute('id', 'row_'+i);
-          document.getElementById('ochreTableBody').appendChild(tr);
-          var td = document.createElement('td');
-          td.setAttribute('id', 'td_name_'+i);
-          td.textContent = textList[i].children[0].children[0].innerHTML;
-          document.getElementById('row_'+i).appendChild(td);
-          var td2 = document.createElement('td');
-          td2.setAttribute('id', 'td_desc_'+i);
-          td2.textContent= textList[i].children[3].innerHTML;
-          document.getElementById('row_'+i).appendChild(td2);
-
-        }
-
-            
-      }
-
-    </script>
-    <div class="container mt-3">
-      <div id="title"></div>
-      <div class="container">
-        <h4 id="setTitle"></h4>
-        <table class="table table-striped order-table" id="ochreTable">
-          <thead class="thead-dark" id="ochreTableColumns">
-            <tr>
-              <th style="text-align: left; width: 30%;">Name</th>
-              <th style="text-align: left; width: 30%;">Description</th>
-            </tr>
-          </thead>
-          <tbody id="ochreTableBody">
-
-          </tbody>
-       </table>
-     </div>
-    </div>
   
 
 
